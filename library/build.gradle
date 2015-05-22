@@ -21,3 +21,11 @@ android {
 dependencies {
     compile 'com.orhanobut:logger:1.4'
 }
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+artifacts {
+    archives sourcesJar
+}
