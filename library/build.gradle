@@ -28,6 +28,9 @@ task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
 artifacts {
     archives sourcesJar
 }
