@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.jrodriguezpuigvert'
 
 android {
     compileSdkVersion 22
@@ -7,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -25,6 +27,9 @@ dependencies {
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
 }
 artifacts {
     archives sourcesJar
